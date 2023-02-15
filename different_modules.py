@@ -4,6 +4,7 @@ import datetime # more advanced time and date operations
 import math # mathematical operations
 import random # random numbers generator
 import keyword # key words 
+import numpy as np # numpy 
 
 # different ways to import modules
 # check where are the functions 
@@ -64,5 +65,28 @@ print(d3)
 # keyword module
 print(keyword.kwlist) # print the list of keywords
 
+# Task 1 
+# Define a tuple with 10 random elements. Count geometric mean.
+elements=np.random.randint(10, 20, size=3)
+elements=tuple(elements)
+print(type(elements))
+print(elements)
 
+def geometric_mean(numbers):
+    if type(numbers)!=tuple:
+        return
+    res=1
+    for i in numbers:
+        res=res*i
+    return math.sqrt(res)
 
+print(geometric_mean(elements))
+
+# Task 2
+# Count the area of the acute triangle with given a, b and alpha.
+a=10
+b=20
+alpha=85
+
+def triangle_area(a,b,alpha):
+    return a*b/2*math.sin(alpha)
